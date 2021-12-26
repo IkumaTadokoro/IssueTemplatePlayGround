@@ -1,62 +1,53 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: バグレポート
+description: バグを見つけたらレポートお願いします。
+labels: ["バグ"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
+      value: "## バグ報告ありがとうございます！以下のフォームに入力をお願いします"
+  - type: textarea
+    id: description
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: 概要
+      description: 簡潔な説明
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: reproduction
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: 再現手順
+      description: バグの再現手順
+      placeholder: |
+        1. /fooにアクセス。
+        2. 「投稿」をクリック。
+        3. エラーが表示される。
     validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      required: false
   - type: textarea
-    id: logs
+    id: expected
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
-  - type: checkboxes
-    id: terms
+      label: 期待される振る舞い
+      description: 簡潔な説明
+    validations:
+      required: false
+  - type: textarea
+    id: screenshot
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: スクリーンショット
+    validations:
+      required: false
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境
+      value: |
+        - OS: [e.g. iOS]
+        - ブラウザ: [e.g. chrome, safari]
+        - バージョン: [e.g. 22]
+    validations:
+      required: false
+  - type: textarea
+    id: related_issues
+    attributes:
+      label: 関連Issue
+      placeholder: "Ref: #3899"
