@@ -4,7 +4,7 @@ labels: ["バグ"]
 body:
   - type: markdown
     attributes:
-      value: "## バグ報告ありがとうございます！以下のフォームに入力をお願いします"
+      value: "バグ報告ありがとうございます！以下のフォームに入力をお願いします"
   - type: textarea
     id: description
     attributes:
